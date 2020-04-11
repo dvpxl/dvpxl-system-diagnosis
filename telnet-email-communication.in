@@ -1,0 +1,27 @@
+> ehlo {{server}}
+< ---
+ehlo {{redacted-server}}
+250-{{redacted-server}}
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 SMTPUTF8
+> mail from:<{{sender_email}}
+< 250 2.1.0 Ok
+> rcpt to:<{{receiver_email}}> NOTIFY=success,failure
+< 250 2.1.5 Ok
+> data
+< 354 End data with <CR><LF>.<CR><LF>
+> subject: {{subject_text}}
+>
+{{data}}
+.
+< 250 2.0.0 Ok: queued as 26E5245AF8
+> quit
+< 221 2.0.0 Bye
+< Connection closed by foreign host.
