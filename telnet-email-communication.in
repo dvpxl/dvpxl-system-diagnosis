@@ -11,7 +11,7 @@ ehlo {{redacted-server}}
 250-8BITMIME
 250-DSN
 250 SMTPUTF8
-> mail from:<{{sender_email}}
+> mail from:<{{sender_email}}>
 < 250 2.1.0 Ok
 > rcpt to:<{{receiver_email}}> NOTIFY=success,failure
 < 250 2.1.5 Ok
